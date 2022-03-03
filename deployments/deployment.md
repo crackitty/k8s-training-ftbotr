@@ -33,8 +33,19 @@ spec:
 
 ## Important sections
 
-In the `metadata` section we have the deployment name and (in this case) one label called app which
-will be used to 
+### `metadata`
+
+In the `metadata` section we have the deployment name and (here) one label called app which
+will be used to map some meaning your company has to this deployment - in this case, the `app: nginx`
+
+### `spec: selector`
+
+The selector is used to map the labels that match the pods for this deployment to manage.
+
+### `spec: template`
+
+The template section contains all the configuration required to create a pod for this deployment, as
+such, the labels in the metadata will match those defined in the selector.
 
 ### References
 

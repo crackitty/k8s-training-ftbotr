@@ -1,5 +1,8 @@
 # Setting up your lab environment
 
+> **Note:** You can all take turns in doing different parts of this
+> in the little teams you've created.
+
 To start, we will create a folder to hold the lesson files.
 
 ```bash
@@ -28,3 +31,5 @@ metadata:
 ```
 
 Use `kubectl` to create the namespace in the cluster you're connected to.
+
+[Click here to continue](./exercises/2.md)

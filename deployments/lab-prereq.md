@@ -1,4 +1,22 @@
-# Settings to be done before the day of the lab (if possible)
+# Deployments - Prereqs for the training
+
+## Things you'll need
+
+- Some paper (A4 if you have it)
+- Some post-it notes
+- Some pens - different colours if you have them
+- if you have a white-board you can use that instead
+
+## Let's make it a little more social
+
+If you're not doing this in a solo setting. I'd like you to pair up
+for this part of the training so that you can chat and talk some
+things though from each others perspective.
+
+So form little pairs, or even a three if you're an odd number so
+that nobody is on their own.
+
+## Settings to be done before the day of the lab (if possible)
 
 The training will be hands on and entail the use of the following:
 
@@ -12,7 +30,7 @@ and it's built in `vi` or `nano` if you like.
 
 If you don't have VSCode, you can [download it here](https://code.visualstudio.com/).
 
-# Kubernetes Cluster
+## Getting a Kubernetes Cluster
 
 **Note:** If you have an available Kubernetes cluster you can use you can skip this.
 
@@ -27,3 +45,5 @@ After that is done, simply run the following command and you have a single node 
 ```bash
 kind create cluster
 ```
+
+[Click here to continue](./lab-setup.md)
