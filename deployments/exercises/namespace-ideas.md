@@ -1,4 +1,6 @@
-# Namespace Ideas Exercise
+# Quick Exercise
+
+## Namespace Ideas
 
 Can you think of some good reasons to use Namespaces?
 

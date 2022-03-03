@@ -1,4 +1,6 @@
-# What I would like to be able to do after my app is up and running?
+# Quick Exercise
+
+## What I would like to be able to do after my app is up and running?
 
 Think about the application you want to make available to your users and
 write down 3 things that you want to be able to do **relatively quickly and easily**

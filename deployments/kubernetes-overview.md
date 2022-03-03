@@ -23,4 +23,14 @@ These manifests can appear quite complex at first, but they adhere to schemas
 that are well defined and there is excellent documentation to help understand
 how to use them.
 
+Kubernetes also provides us with a lot more than this that will not be covered
+in this training. Some of the things that Kubernetes will give us are:
+
+- Portability of our infrastructure
+- Multi-cloud cabability
+- Better ecosystem for developers using devOps
+- Open source
+- Battle-tested
+- Market leader
+
 [Click here to continue](./exercises/app-capabilities.md)

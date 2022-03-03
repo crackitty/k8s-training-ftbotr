@@ -6,8 +6,8 @@ into a managed Kubernetes environment.
 
 ## Training Objectives
 
-- Understand why we would use **Deployments**
 - Understand why we are using **Kubernetes** now
+- Understand why we would use **Deployments**
 - Have more control over how my application is rolled out to our customers
 - Become more familiar with declarative, **YAML** based configurations
 
