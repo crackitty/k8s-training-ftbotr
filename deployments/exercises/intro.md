@@ -1,6 +1,8 @@
-# What do you know already?
+# Quick Exercise
+
+## What do you know already?
 
 Take a few minutes and stand up and tell the class how much you believe
 you know already about Deployments in Kubernetes.
 
-[Click here to continue](./README.md)
+[Click here to continue](../README.md)

@@ -11,7 +11,7 @@ After cloning the repo, you can then pick whichever topic you want to learn.
 
 Currently the available courses are as follows:
 
-- [Kubernetes Deployments](./deployments/intro.md)
+- [Kubernetes Deployments](./deployments/exercises/intro.md)
 
 ## Training
 
