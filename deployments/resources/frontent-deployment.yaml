@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: Frontend
+  namespace: default
+  labels:
+    app: Frontend
+spec:
+  selector:
+    matchLabels:
+      app: Frontend
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: Frontend
+    spec:
+      containers:
+      - name:  Frontend
+        image:  crackitty/demo-frontend:latest
+        resources:
+          requests:
+            cpu: 100m
+            memory: 100Mi
+          limits:
+            cpu: 100m
+            memory: 100Mi
+        ports:
+        - containerPort:  80
+          name:  Frontend
