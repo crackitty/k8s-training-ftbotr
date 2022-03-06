@@ -16,9 +16,13 @@ and are unreliable.
 
 ## The present
 
-Kubernetes takes a different approach to this and defines what they call
-a `desired state` whereby Kubernetes will attempt to guarantee the
-configuration you ask it for via YAML defined manifests (configuration files).
+Kubernetes is an orchestration tool that allows you to run and manage
+workloads.
+
+It uses YAML to allow you to defines what they call the `desired state`
+you would like whereby Kubernetes will try to guarantee that the
+configuration you ask it for will be present in the cluster.
+
 These manifests can appear quite complex at first, but they adhere to schemas
 that are well defined and there is excellent documentation to help understand
 how to use them.
@@ -29,8 +33,19 @@ in this training. Some of the things that Kubernetes will give us are:
 - Portability of our infrastructure
 - Multi-cloud cabability
 - Better ecosystem for developers using devOps
+- Very good fit for Microservice architectures
 - Open source
 - Battle-tested
 - Market leader
+
+## Kubectl
+
+Kubernetes provides a command line tool that allows you, as a user, will use to
+communicate with the cluster's control plane and the kubernetes API.
+
+There's a lot you can do with kubectl and you can see what you can do by using
+the official documentation site [here](https://kubernetes.io/docs/reference/kubectl/),
+but for now, you can consider it the tool we will use to apply state changes to the
+cluster via the command line.
 
 [Click here to continue](./exercises/app-capabilities.md)

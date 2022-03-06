@@ -1,6 +1,6 @@
-# What is a Deployment
+# What is a Deployment?
 
-Provides declarative updates for Pods and Replicasets
+A deployment provides declarative updates for Pods and Replicasets
 
 You use a deployment yaml to describe a desired state and the Deployment controller changes
 the actual state to the desired state at a controlled rate.
@@ -31,6 +31,16 @@ spec:
         - containerPort: 80
 ```
 
+If the above were saved to the file `demo-dply.yaml` you would run the following to
+create it.
+
+Note the `-n deployment-demo` at the end - this tells Kubernetes to
+create the deployment in the `deployment-demo` namespace.
+
+```bash
+kubectl create -f ./demo-dply.yaml -n deployment-demo
+```
+
 ## Important sections
 
 ### `metadata`
@@ -47,6 +57,6 @@ The selector is used to map the labels that match the pods for this deployment t
 The template section contains all the configuration required to create a pod for this deployment, as
 such, the labels in the metadata will match those defined in the selector.
 
-### References
+### Official Documentation
 
-[Kubernetes deployments](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/)
+[Kubernetes Deployments](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/)

@@ -19,5 +19,4 @@ The training is expected to be done in groups of two or more so there will
 be parts that, if you are doing this on your own, you can skip, but it is
 recommended to do these in order to reinforce the concepts.
 
-
 **Note:** This is an ongoing development and new modules will be added

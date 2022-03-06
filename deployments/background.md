@@ -16,4 +16,4 @@ file.
 
 We will look into this next.
 
-[Continue](./deployment.md)
+[Click here to continue](./deployment.md)

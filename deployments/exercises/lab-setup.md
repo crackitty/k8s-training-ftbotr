@@ -32,4 +32,8 @@ metadata:
 
 Use `kubectl` to create the namespace in the cluster you're connected to.
 
-[Click here to continue](./exercises/2.md)
+```bash
+kubectl apply -f resources/namespace.yaml
+```
+
+[Click here to continue](./namespace-ideas.md)

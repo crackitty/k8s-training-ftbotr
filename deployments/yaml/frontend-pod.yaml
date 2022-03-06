@@ -2,13 +2,13 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: frontend
-  namespace: dev
+  namespace: deployment-demo
   labels:
     app: frontend
 spec:
   containers:
   - name: Frontend
-    image: crackitty/demo-frontend:latest
+    image: crackitty/demo-frontend:v1
     resources:
       limits:
         cpu: 200m

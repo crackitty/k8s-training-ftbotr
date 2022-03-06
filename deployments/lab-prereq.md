@@ -40,10 +40,52 @@ provides us with all we need for this demo.
 
 You can install kind by following what is described in [this link](https://kind.sigs.k8s.io/docs/user/quick-start/#installation).
 
-After that is done, simply run the following command and you have a single node cluster.
+After that is done, run the following command and you have a single node cluster with some custom
+config that allows the local host to make requests to the ingress controller over ports 80/443 and
+also configure it to only allow the ingress controller to run on specific nodes matching the label
+selector.
+
+Don't worry about this for now - it's just a way to get a basic cluster running.
 
 ```bash
-kind create cluster
+cat <<EOF | kind create cluster --config=-
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+nodes:
+- role: control-plane
+  kubeadmConfigPatches:
+  - |
+    kind: InitConfiguration
+    nodeRegistration:
+      kubeletExtraArgs:
+        node-labels: "ingress-ready=true"
+  extraPortMappings:
+  - containerPort: 80
+    hostPort: 80
+    protocol: TCP
+  - containerPort: 443
+    hostPort: 443
+    protocol: TCP
+EOF
 ```
 
-[Click here to continue](./lab-setup.md)
+We will make one addition to the local cluster - we need an Ingress Controller.
+
+This is so that we can call into the cluster from outside and test our setup.
+
+```bash
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/kind/deploy.yaml
+```
+
+We then need to wait until the ingress controller is ready to accept requests - so
+run the following to ensure this. If it results in a failure, just run it again until
+you get `condition met`.
+
+```bash
+kubectl wait --namespace ingress-nginx \
+  --for=condition=ready pod \
+  --selector=app.kubernetes.io/component=controller \
+  --timeout=90s
+```
+
+[Click here to continue](./README.md)

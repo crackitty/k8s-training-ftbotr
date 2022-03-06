@@ -8,11 +8,13 @@ after you do into production.
 
 Draw them out on paper using a template similar to the one below:
 
-![App bubble template](./../images/app-capabilities-map.png)
+![App bubble template](../images/app-capabilities-map.png)
 
 Once you've done this we can have a quick round-the-table where everyone shares their
 responses.
 
 Questions about why someone chose a particular topic are completely welcome - be chatty.
+
+> **Note:** Don't throw this sheet out - we will reuse it later.
 
 [Click here to continue](../kubernetes-architecture.md)
