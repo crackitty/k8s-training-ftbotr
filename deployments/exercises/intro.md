@@ -2,7 +2,9 @@
 
 ## What do you know already?
 
-Take a few minutes and stand up and tell the class how much you believe
-you know already about Deployments in Kubernetes.
+We will take a few minutes now so that each person can quickly tell the
+class how much, if anything, they already know about Kubernetes Deployments.
+
+Do you consider yourself an expert or a novice (etc.)
 
 [Click here to continue](../lab-prereq.md)
