@@ -34,11 +34,8 @@ spec:
 If the above were saved to the file `demo-dply.yaml` you would run the following to
 create it.
 
-Note the `-n deployment-demo` at the end - this tells Kubernetes to
-create the deployment in the `deployment-demo` namespace.
-
 ```bash
-kubectl create -f ./demo-dply.yaml -n deployment-demo
+kubectl create -f ./demo-dply.yaml
 ```
 
 ## Important sections

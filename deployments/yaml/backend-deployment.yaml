@@ -2,7 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: backend
-  namespace: deployment-demo
   labels:
     app: backend
 spec:
@@ -17,7 +16,7 @@ spec:
     spec:
       containers:
       - name: backend
-        image:  crackitty/demo-backend:v1
+        image: crackitty/demo-backend:v1
         resources:
           requests:
             cpu: 100m
@@ -26,8 +25,7 @@ spec:
             cpu: 100m
             memory: 100Mi
         ports:
-        - containerPort: 80
-          name: public
+        - containerPort: 8080
           protocol: TCP
 ---
 kind: Service
@@ -37,10 +35,10 @@ metadata:
   labels:
     app: backend
 spec:
+  type: ClusterIP
   selector:
     app: backend
   ports:
-    - name: public
-      protocol: TCP
+    - protocol: TCP
       port: 80
-      targetPort: public
+      targetPort: 8080

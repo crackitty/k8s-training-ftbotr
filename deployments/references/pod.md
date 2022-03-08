@@ -39,7 +39,6 @@ create the deployment in the `deployment-demo` namespace.
 kubectl create -f ./demo-pod.yaml -n deployment-demo
 ```
 
-
 ### Official Documentation
 
 [Kubernetes Pods](https://kubernetes.io/docs/concepts/workloads/pods/)

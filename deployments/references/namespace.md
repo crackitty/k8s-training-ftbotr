@@ -12,7 +12,7 @@ Below is a sample yaml needed to create a Namespace.
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: demo-namespace
+  name: deployment-demo
 ```
 
 If the above were saved to the file `demo-ns.yaml` you would run the following to

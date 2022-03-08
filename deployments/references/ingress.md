@@ -19,19 +19,21 @@ Below is a sample yaml file defining an ingress.
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: frontend-ingress
+  name: demo-localhost
+  namespace: default
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /$1
 spec:
+  ingressClassName: nginx
   rules:
-  - host: frontend.demo
+  - host: frontend.localdev.me
     http:
       paths:
       - path: /
         pathType: Prefix
         backend:
           service:
-            name: frontend
+            name: frontend-service
             port:
               number: 80
 ```
@@ -42,16 +44,15 @@ your local `/etc/hosts` file.
 Do this by running
 
 ```bash
-kubectl get ingress
+kubectl port-forward --namespace=ingress-nginx service/ingress-nginx-controller 8080:80
 ```
 
-And you will be given a result like
+At this point you can test your ingress by opening this link in your browser
 
-```bash
-NAME              CLASS    HOSTS              ADDRESS        PORTS   AGE
-frontend-ingress  <none>   frontend.demo      172.17.0.15    80      63s
+[http://frontend.localdev.me:8080/](http://frontend.localdev.me:8080/)
 
 ### Official Documentation
 
 [Kubernetes Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/)
 [Kubernetes Ingress Controllers](https://kubernetes.io/docs/concepts/services-networking/ingress-controllers/)
+[NGINX Ingress Controller](https://kubernetes.github.io/ingress-nginx/deploy/#quick-start)

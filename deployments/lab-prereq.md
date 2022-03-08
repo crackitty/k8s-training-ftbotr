@@ -53,19 +53,9 @@ kind: Cluster
 apiVersion: kind.x-k8s.io/v1alpha4
 nodes:
 - role: control-plane
-  kubeadmConfigPatches:
-  - |
-    kind: InitConfiguration
-    nodeRegistration:
-      kubeletExtraArgs:
-        node-labels: "ingress-ready=true"
   extraPortMappings:
-  - containerPort: 80
-    hostPort: 80
-    protocol: TCP
-  - containerPort: 443
-    hostPort: 443
-    protocol: TCP
+  - containerPort: 30080
+    hostPort: 30080
 EOF
 ```
 
@@ -86,6 +76,53 @@ kubectl wait --namespace ingress-nginx \
   --for=condition=ready pod \
   --selector=app.kubernetes.io/component=controller \
   --timeout=90s
+```
+
+## Load Balancer for Kind
+
+Installing metallb using default manifests
+
+### Create the metallb namespace
+
+```bash
+kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/master/manifests/namespace.yaml
+```
+
+### Apply metallb manifest
+
+```bash
+kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/master/manifests/metallb.yaml
+```
+
+Wait for metallb pods to run
+
+```bash
+kubectl get pods -n metallb-system --watch
+```
+
+Setup address pool used by Load Balancers
+
+```bash
+docker network inspect -f '{{.IPAM.Config}}' kind
+```
+
+Create the ConfigMap
+
+```bash
+cat <<EOF | kubectl apply -f -
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  namespace: metallb-system
+  name: config
+data:
+  config: |
+    address-pools:
+    - name: default
+      protocol: layer2
+      addresses:
+      - 172.19.255.200-172.19.255.250
+EOF
 ```
 
 [Click here to continue](./README.md)
